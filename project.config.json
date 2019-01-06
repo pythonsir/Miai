@@ -1,0 +1,42 @@
+{
+	"miniprogramRoot": "dist/",
+	"projectname": "Miai",
+	"description": "Miai",
+	"appid": "wxfa0f395892ef5f26",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "sex",
+					"pathName": "pages/choosesex/choosesex"
+				}
+			]
+		}
+	}
+}
