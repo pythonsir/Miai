@@ -7,10 +7,6 @@ class Navbar extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { 
-          statusBarHeight: 0, 
-          height:0,
-        };
     }
   
 
@@ -40,7 +36,6 @@ class Navbar extends Component {
 
   render() {
     const { bgimg,icon,title,color,size,height,statusBarHeight } = this.props;
-
     const bg = { height: height + 'px', paddingTop: statusBarHeight+'px' ,backgroundImage: `url(${bgimg})` };
      
     return <View className="container" style={bg}>

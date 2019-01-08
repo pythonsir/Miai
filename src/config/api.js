@@ -1,4 +1,4 @@
-const apiRoot = "http://192.168.1.3:8888/";
+const apiRoot = "http://localhost:8888/";
 
 export default {
   apiRoot,
