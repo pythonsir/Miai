@@ -2,7 +2,7 @@
 # Miai
 基于 Taro 开发的相亲类微信小程序
 
-#[MiaiApi](https://github.com/pythonsir/MiaiApi)
+# [MiaiApi](https://github.com/pythonsir/MiaiApi)
 为Miai提供接口服务。
 
 ## 开发教程
