@@ -16,12 +16,6 @@ export default {
             }).catch(err => {
                 reject(err)
             })
-
         })
-        
-        
-
-
     }
-
 }

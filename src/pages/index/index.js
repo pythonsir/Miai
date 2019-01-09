@@ -10,7 +10,7 @@ import bg from '../../assets/images/bg.jpg'
 @observer
 class Index extends Component {
   config = {
-    navigationBarTitleText: "脱单在太原"
+    navigationBarTitleText: "脱单在太原",
   };
 
   componentWillMount() {}

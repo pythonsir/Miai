@@ -16,6 +16,11 @@ class Choosesex extends Component {
   constructor(props) {
     super(props);
   }
+
+  config = {
+    navigationBarTitleText: "脱单在太原",
+  };
+
   state = {
     bgimg: "http://qiniu.cdn.colorlib.cn/navbg.jpg",
     male: "",
@@ -25,8 +30,6 @@ class Choosesex extends Component {
   };
 
   componentWillMount() {
-    
-
     Util.getNavInfo().then(res => {
       this.setState({
         height: res.height,
@@ -37,30 +40,46 @@ class Choosesex extends Component {
   }
 
   choosesex(sex) {
-    
     const { formStore } = this.props;
 
     formStore.setGender(sex);
-
   }
 
   render() {
-
-    const { formStore: { gender } } = this.props;
-    console.log(gender);
-    return <View className="container" style={{ paddingTop: this.state.height + "px" }}>
-        <Navbar height={this.state.height} statusBarHeight={this.state.statusBarHeight} bgimg={this.state.bgimg} size="28" color="#ffffff" icon="chevron-left" title="完善资料" />
+    const {
+      formStore: { gender }
+    } = this.props;
+    return (
+      <View
+        className="container"
+        style={{ paddingTop: this.state.height + "px" }}
+      >
+        <Navbar
+          height={this.state.height}
+          statusBarHeight={this.state.statusBarHeight}
+          bgimg={this.state.bgimg}
+          size="28"
+          color="#ffffff"
+          icon="chevron-left"
+          title="完善资料"
+        />
         <Banner title="请选择性别" style="width:100%" />
         <View className="content">
           <View className="content_1">
             <View className="male">
-              <View className={ gender == "male" ? "warper choose" : "warper"} onClick={this.choosesex.bind(this, "male")}>
+              <View
+                className={gender == "male" ? "warper choose" : "warper"}
+                onClick={this.choosesex.bind(this, "male")}
+              >
                 <Image mode="aspectFit" src={this.state.male} />
                 <View className="label">帅哥</View>
               </View>
             </View>
             <View className="female">
-            <View className={gender == "female" ? "warper choose" : "warper"} onClick={this.choosesex.bind(this, "female")}>
+              <View
+                className={gender == "female" ? "warper choose" : "warper"}
+                onClick={this.choosesex.bind(this, "female")}
+              >
                 <Image mode="aspectFit" src={this.state.female} />
                 <View className="label">美女</View>
               </View>
@@ -73,7 +92,8 @@ class Choosesex extends Component {
             <View className="title">已有账号，直接登陆</View>
           </View>
         </View>
-      </View>;
+      </View>
+    );
   }
 }
 

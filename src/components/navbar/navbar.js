@@ -11,17 +11,10 @@ class Navbar extends Component {
   
 
   componentWillMount() {
-   
-   
-    
+
   }
 
   componentDidMount() {
-
-   
-
-
-
   }
 
   componentWillUnmout() {}
