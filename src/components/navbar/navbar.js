@@ -28,8 +28,9 @@ class Navbar extends Component {
   }
 
   render() {
-    const { bgimg,icon,title,color,size,height,statusBarHeight } = this.props;
-    const bg = { height: height + 'px', paddingTop: statusBarHeight+'px' ,backgroundImage: `url(${bgimg})` };
+    const { icon,title,color,size,height,statusBarHeight } = this.props;
+
+    const bg = { height: height + 'px', paddingTop: statusBarHeight+'px'  };
      
     return <View className="container" style={bg}>
         <View className='warper'>

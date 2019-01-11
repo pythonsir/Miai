@@ -18,11 +18,10 @@ class Choosesex extends Component {
   }
 
   config = {
-    navigationBarTitleText: "脱单在太原",
+    navigationBarTitleText: "脱单在太原"
   };
 
   state = {
-    bgimg: "http://qiniu.cdn.colorlib.cn/navbg.jpg",
     male: "",
     female: "",
     height: 0,
@@ -44,6 +43,9 @@ class Choosesex extends Component {
 
     formStore.setGender(sex);
   }
+  gotoNext(){
+    Taro.navigateTo({ url: "/pages/workspace/workspace" });
+  }
 
   render() {
     const {
@@ -57,7 +59,6 @@ class Choosesex extends Component {
         <Navbar
           height={this.state.height}
           statusBarHeight={this.state.statusBarHeight}
-          bgimg={this.state.bgimg}
           size="28"
           color="#ffffff"
           icon="chevron-left"
@@ -86,7 +87,12 @@ class Choosesex extends Component {
             </View>
           </View>
           <View className="btn">
-            <AtButton className="btn_bg" size="normal" circle={true}>
+            <AtButton
+              onClick={this.gotoNext}
+              className="btn_bg"
+              size="normal"
+              circle={true}
+            >
               下一步
             </AtButton>
             <View className="title">已有账号，直接登陆</View>
