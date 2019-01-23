@@ -18,7 +18,9 @@ class App extends Component {
     pages: [
       "pages/index/index",
       "pages/choosesex/choosesex",
-      "pages/workspace/workspace"
+      "pages/workspace/workspace",
+      "pages/birthday/birthday",
+      "pages/height/height"
     ],
     window: {
       backgroundTextStyle: "light",

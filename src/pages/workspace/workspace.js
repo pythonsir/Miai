@@ -64,6 +64,10 @@ class Workspace extends Component {
 
     formStore.setPCO(province,city,county)
 
+    Taro.navigateTo({
+      url:'/pages/birthday/birthday'
+    })
+
   }
 
 
@@ -74,6 +78,7 @@ class Workspace extends Component {
     return <View className="container" style={{ paddingTop: this.state.height + "px" }}>
         <Navbar height={this.state.height} statusBarHeight={this.state.statusBarHeight} size="28" color="#ffffff" icon="chevron-left" title="完善资料" />
         <Banner title="您的工作地区在哪里？" style="width:100%" />
+      <View className="content">
         <Area onChange={this.handleSelect} />
         <View className="btn">
           <AtButton
@@ -86,6 +91,8 @@ class Workspace extends Component {
               </AtButton>
           <View className="title">已有账号，直接登陆</View>
         </View>
+        </View>
+        
       </View>;
   }
 }

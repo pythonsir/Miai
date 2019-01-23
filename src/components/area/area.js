@@ -242,18 +242,13 @@ export default class Area extends Component {
 
 
   render() {
-    return (
-      <View className="content">
+    return <View className="content">
         <View className="select">
           <View className="province">{this.state.select_province}</View>
           <View className="city">{this.state.select_city}</View>
           <View className="county">{this.state.select_county}</View>
         </View>
-        <PickerView
-          indicatorStyle="height: 50px;"
-          style="width: 100%;height:200px;"
-          onChange={this.onChange}
-        >
+        <PickerView indicatorStyle="height: 50px;" style="width: 100%;height:200px;" onChange={this.onChange}>
           <PickerViewColumn className="pvc">
             {this.state.province_.map(item => {
               return <View>{item["name"]}</View>;
@@ -265,12 +260,11 @@ export default class Area extends Component {
             })}
           </PickerViewColumn>
           <PickerViewColumn className="pvc">
-              {this.state.county_.map(item => {
-                return <View>{item["name"]}</View>;
-              })}
-            </PickerViewColumn>
+            {this.state.county_.map(item => {
+              return <View>{item["name"]}</View>;
+            })}
+          </PickerViewColumn>
         </PickerView>
-      </View>
-    );
+      </View>;
   }
 }
