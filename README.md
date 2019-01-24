@@ -17,6 +17,7 @@
 2. [使用Taro开发一款相亲类微信小程序--小程序登录以及获取用户信息](https://mp.weixin.qq.com/s?__biz=Mzg3MTA2MjYwMQ==&mid=2247483681&idx=1&sn=5bba707942583d9ce9aa14371d11d06b&chksm=ce850c07f9f285116b46072c4b311a85e245fb701fcf8c618058c54fa94ed49aca580ac7aa6a&token=1899004446&lang=zh_CN#rd)
 2. [使用Taro开发一款相亲类微信小程序-首页和性别选择页](https://mp.weixin.qq.com/s?__biz=Mzg3MTA2MjYwMQ==&mid=100000038&idx=1&sn=9cbadadbebb76522072f765bc5ccdaee&chksm=4e850c0079f2851616e7845d8a64a6e60f50b71188a59c54999c5a5582c54dd71df62dc53fe0&mpshare=1&scene=1&srcid=0109A6Ei5mdBptXK95zxyIkL&key=b970aa6c989eaf6fe4f5de9aee814116e0842eed6be11abb83246259873bfd9a1a58deb376fd8912792ad216a14f48960b546c329605119b78d4016eb0aa7954c75182e16d9e8a4cc2903c9fc7ec763d&ascene=0&uin=MTM5NzMxNTU1&devicetype=iMac+MacBookAir5%2C2+OSX+OSX+10.12.2+build(16C68)&version=12010210&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=3Bjx6pC9fy%2BtHFIhDVfWtRkiYPitP7pEHOMB%2F7CymB4%3D)
 2. [使用Taro开发一款相亲类微信小程序-省市区选择页](https://mp.weixin.qq.com/s?__biz=Mzg3MTA2MjYwMQ==&mid=2247483698&idx=1&sn=442a6d4ebf8fa5df302ff64ad8555b0d&chksm=ce850c14f9f28502c72243859c740314f8338f3f349962f1d4687847a3956dc39b419c1dba82&token=753536390&lang=zh_CN#rd)
+2. [使用Taro开发一款相亲类微信小程序-出生年月选择页](https://mp.weixin.qq.com/s?__biz=Mzg3MTA2MjYwMQ==&mid=2247483708&idx=1&sn=639957cbe1f8ecf3cfb967e5c7fd37a5&chksm=ce850c1af9f2850c61123607deb2846718c7e51129cfd8d83b96be5636e75282e145d6806587&token=177588573&lang=zh_CN#rd)
 
 
 
