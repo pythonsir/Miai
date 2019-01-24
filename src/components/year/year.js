@@ -9,14 +9,6 @@ import './year.less'
 class Year extends Component {
  
 
-  componentWillReceiveProps(nextprops){
-
-    
-    
-    
-
-  } 
-
   state={
       yearlist:[],
   }

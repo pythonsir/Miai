@@ -12,7 +12,7 @@ import './birthday.less'
 
 
 
-@inject("birthdayStore")
+@inject("formStore")
 @observer
 class Birthday extends Component{
 
@@ -62,16 +62,16 @@ class Birthday extends Component{
 
     handleSelectYear(newstate) { // 获取子组件传回来的state
 
-        const { birthdayStore } = this.props
+        const { formStore } = this.props
 
         let that = this
 
-        if (newstate != birthdayStore.year){
-            birthdayStore.day = ''
-            birthdayStore.month = ''
+        if (newstate != formStore.year){
+            formStore.day = ''
+            formStore.month = ''
         }
 
-        birthdayStore.setyear(newstate)
+        formStore.setyear(newstate)
 
 
         setTimeout(() => {
@@ -86,7 +86,7 @@ class Birthday extends Component{
 
     selectYMD(flag){
 
-        const { birthdayStore: { year, month, day } } = this.props
+        const { formStore: { year, month, day } } = this.props
 
         if( year == '' && (flag == 'm' || flag == 'd')){
 
@@ -115,13 +115,13 @@ class Birthday extends Component{
 
         let that = this
 
-        const { birthdayStore } = this.props
+        const { formStore } = this.props
 
-        if(newstate != birthdayStore.month){
-            birthdayStore.day = ''
+        if(newstate != formStore.month){
+            formStore.day = ''
         }
 
-        birthdayStore.setmonth(newstate)
+        formStore.setmonth(newstate)
 
         setTimeout(() => {
             
@@ -135,9 +135,9 @@ class Birthday extends Component{
 
     handleSelectDay(newstate){
      
-        const { birthdayStore } = this.props
+        const { formStore } = this.props
 
-        birthdayStore.setday(newstate)
+        formStore.setday(newstate)
 
         Taro.navigateTo({
             url:'/pages/height/height'
@@ -148,7 +148,7 @@ class Birthday extends Component{
     render (){
 
 
-        const {birthdayStore : {year,month,day}} = this.props
+        const {formStore : {year,month,day}} = this.props
 
         let html = null
 

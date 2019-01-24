@@ -4,7 +4,10 @@ const formStore = observable({
   gender: "male",
   province: "",
   city: "",
-  county:""
+  county:"",
+  year: '',
+  month: '',
+  day: ''
 });
 
 formStore.setGender = function(v1){
@@ -15,6 +18,17 @@ formStore.setPCO = function (province,city,county){
   this.province = province
   this.city = city
   this.county = county
+}
+formStore.setyear = function (v) {
+  this.year = v
+}
+
+formStore.setmonth = function (v) {
+  this.month = v
+}
+
+formStore.setday = function (v) {
+  this.day = v
 }
 
 export default formStore;
