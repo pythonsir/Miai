@@ -7,7 +7,8 @@ const formStore = observable({
   county:"",
   year: '',
   month: '',
-  day: ''
+  day: '',
+  height:''
 });
 
 formStore.setGender = function(v1){
@@ -29,6 +30,10 @@ formStore.setmonth = function (v) {
 
 formStore.setday = function (v) {
   this.day = v
+}
+
+formStore.setHeight = function(h){
+  this.height = h
 }
 
 export default formStore;
