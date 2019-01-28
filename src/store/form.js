@@ -8,7 +8,10 @@ const formStore = observable({
   year: '',
   month: '',
   day: '',
-  height:''
+  height:'',
+  education:0,
+  marriage:0,
+  income:0
 });
 
 formStore.setGender = function(v1){
@@ -34,6 +37,18 @@ formStore.setday = function (v) {
 
 formStore.setHeight = function(h){
   this.height = h
+}
+
+formStore.setEducation = function(e){
+  this.education = e
+}
+
+formStore.setMarriage = function(m){
+  this.marriage = m
+}
+
+formStore.setIncome = function(i){
+  this.income = i
 }
 
 export default formStore;

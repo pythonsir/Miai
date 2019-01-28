@@ -36,7 +36,7 @@ class Height extends Component{
     render(){
 
         const { height_value } = this.props
-console.log(height_value)
+
         return (
             <View className="warper">
 

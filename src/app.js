@@ -20,7 +20,10 @@ class App extends Component {
       "pages/choosesex/choosesex",
       "pages/workspace/workspace",
       "pages/birthday/birthday",
-      "pages/height/height"
+      "pages/height/height",
+      "pages/education/education",
+      "pages/marriage/marriage",
+      "pages/income/income"
     ],
     window: {
       backgroundTextStyle: "light",

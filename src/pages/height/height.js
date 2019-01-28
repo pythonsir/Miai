@@ -58,7 +58,11 @@ class Height extends Component {
 
         formStore.setHeight(n)
 
-        
+        setTimeout(() => {
+            Taro.navigateTo({
+                url:'/pages/education/education'
+            })
+        }, 300);
         
     }
 
