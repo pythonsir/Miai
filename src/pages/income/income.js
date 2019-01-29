@@ -66,6 +66,12 @@ class Income extends Component{
 
         formStore.setIncome(h)
 
+        setTimeout(() => {
+            Taro.navigateTo({
+                url:'/pages/account/create_account'
+            })
+        }, 300);
+
     }
 
     render() {
