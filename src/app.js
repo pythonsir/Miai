@@ -23,7 +23,8 @@ class App extends Component {
       "pages/height/height",
       "pages/education/education",
       "pages/marriage/marriage",
-      "pages/income/income"
+      "pages/income/income",
+      "pages/account/create_account"
     ],
     window: {
       backgroundTextStyle: "light",
