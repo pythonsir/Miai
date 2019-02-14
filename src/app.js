@@ -24,7 +24,8 @@ class App extends Component {
       "pages/education/education",
       "pages/marriage/marriage",
       "pages/income/income",
-      "pages/account/create_account"
+      "pages/account/create_account",
+      "pages/account/phone_register"
     ],
     window: {
       backgroundTextStyle: "light",
