@@ -39,7 +39,9 @@ class CreateAccount extends Component{
 
     gotoRegister(){
 
-        console.log("跳转手机号注册")
+        Taro.navigateTo({
+            url:'/pages/account/phone_register'
+        })
 
     }
 

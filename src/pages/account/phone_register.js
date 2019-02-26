@@ -48,8 +48,6 @@ class PhoneRegister extends Component{
 
     sendSMS(){
 
-       
-
         let that = this;
 
         let i = 60;
