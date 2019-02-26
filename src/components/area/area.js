@@ -42,10 +42,11 @@ export default class Area extends Component {
           area:area
         })
 
-        this.setProvince(null,area).then(res => {
+      this.generateProvince(null,area).then(res => {
           const code = res.code
           this.setCity(code,area).then(res => {
 
+            
             const city_code = res[this.state.cindex].code
             this.setCounty(city_code,area).catch(err => {
               console.log(err)
@@ -75,7 +76,7 @@ export default class Area extends Component {
   componentWillReceiveProps() {}
 
 
-  setProvince = (code,data)=>{
+  generateProvince = (code,data)=>{
 
     return new Promise((resolve,reject) => {
 
@@ -92,6 +93,30 @@ export default class Area extends Component {
       resolve(result[this.state.pindex])
 
     })
+
+  }
+
+  setProvince = (index) => {
+
+    return new Promise((resolve, reject) => {
+
+      const pr = this.state.province_[index]
+
+      this.setState({
+        pindex: val[0],
+        select_province: this.state.province_[val[0]].name,
+      })
+
+      if(true){
+        resolve(pr)
+      }else{
+        reject(false)
+      }
+      
+
+
+    })
+
 
   }
 
@@ -173,72 +198,89 @@ export default class Area extends Component {
   onChange = e => {
     const val = e.detail.value
     const area = this.state.area
-    if(this.state.pindex != val[0]){
+    if(this.state.pindex != val[0]){ // 滚动省
         const pr = this.state.province_[val[0]]
         this.setState({
           pindex:val[0],
           select_province:this.state.province_[val[0]].name,
         })
-        this.setCity(pr['code'].slice(0, 2),area).then(res => {
-          if(res.length == 1){
+        this.setCity(pr['code'].slice(0, 2),area).then(c_res => {
+          if (c_res.length >= 1){ //有市
             this.setState({
-              select_city:res[this.state.cindex].name
+              select_city: c_res[this.state.cindex].name
             })
-          }else{
-            this.setState({
-              select_city:'请选择市'
+            const city_code = c_res[this.state.cindex].code
+            this.setCounty(city_code, area).then(co_res => {
+              if(co_res.length >= 1){
+                this.setState({
+                  select_county: co_res[this.state.coindex].name
+                })
+              }
+
+              this.updateParent(this.state.province_[val[0]].name, c_res[this.state.cindex].name, co_res[this.state.coindex].name)
+
             })
           }
-          const city_code = res[this.state.cindex].code
-          this.setCounty(city_code, area).then(res => {
-            if(res.length == 1){
-              this.setState({
-                select_county:res[this.state.coindex].name
-              })
-            }else{
-              this.setState({
-                select_county:'请选择区县'
-              })
-            }
-          }) .catch(err => {
-            console.log(err)
-          })
+          
         }).catch(err => {
           console.log(err)
         })
-        
+      console.log(this.state)
+      return;
     }
 
-    if(this.state.cindex != val[1]){
+    if(this.state.cindex != val[1]){ //滚动市
 
       const cr = this.state.city_[val[1]];
 
       this.setState({
         cindex:val[1],
         select_city:this.state.city_[val[1]].name,
-        select_county:'请选择区县'
       })
 
-      this.setCounty(cr["code"].slice(0, 4), area).catch(err => {
-        console.log(err);
-      });
+      this.setCounty(cr["code"].slice(0, 4), area).then(co_res => {
 
+  
+          if (co_res.length >= 1) {
+            this.setState({
+              select_county: co_res[this.state.coindex].name
+            })
+          }
+
+          this.updateParent(this.state.select_province, this.state.city_[val[1]].name, co_res[this.state.coindex].name)
+
+    
+
+      })
+
+      this.updateParent(this.state.select_province, this.state.city_[val[1]].name,'选择县区')
+
+      return;
     }
 
-    if(this.state.coindex != val[2]){
+    if(this.state.coindex != val[2]){ // 滚动县级
       this.setState({
         coindex:val[2],
         select_county:this.state.county_[val[2]].name
       })
+      this.updateParent(this.state.select_province, this.state.select_city, this.state.county_[val[2]].name)
+
     }
 
-    this.props.onChange({
-      province: this.state.select_province == '选择省' ?'': this.state.select_province,
-      city: this.state.select_city == '请选择市'?'':this.state.select_city,
-      county: this.state.select_county == '选择县区'?'':this.state.select_county
-    })
+   
 
   };
+
+  // 更新父组件数据
+  updateParent(province,city,county){
+
+      this.props.onChange({
+        province: province ,
+        city: city ,
+        county: county 
+     })
+
+  }
 
 
   render() {

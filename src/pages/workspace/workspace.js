@@ -43,7 +43,7 @@ class Workspace extends Component {
   componentDidShow() {}
 
   handleSelect(newstate){ // 获取子组件传回来的state
-
+    console.log(newstate)
     this.setState(newstate)
 
   }
