@@ -7,5 +7,6 @@ export default {
   getArea: apiRoot + "?s=Dictionary.GetArea",
   getPhone: apiRoot + "?s=Core.getPhone",
   sendSms: apiRoot + "?s=Core.sendSms",
-  bindPhone: apiRoot + '?s=Core.bindPhone'
+  bindPhone: apiRoot + '?s=Core.bindPhone',
+  saveFormStore: apiRoot + '?s=User.saveUserInfo'
 };

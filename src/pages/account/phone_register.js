@@ -1,9 +1,12 @@
 import Taro, { Component } from "@tarojs/taro";
 import { View,Image } from "@tarojs/components"
+import { observer, inject } from "@tarojs/mobx";
 import api from "../../config/api";
 import { AtInput, AtButton } from 'taro-ui'
 import './phone_register.less'
 
+@inject("formStore")
+@observer
 class PhoneRegister extends Component{
 
     config = {
@@ -33,12 +36,6 @@ class PhoneRegister extends Component{
         this.setState({
             value: e
         })
-
-    
-
-        
-
-        
     }
     handleChange2(e){
         this.setState({
@@ -135,6 +132,8 @@ class PhoneRegister extends Component{
     // 绑定手机号
     submit(){
 
+        let that = this
+
         if(this.state.value == ''){
             
             Taro.showToast({
@@ -176,6 +175,7 @@ class PhoneRegister extends Component{
 
           if(res.data.data == true){
               Taro.showToast({'title':'绑定成功'})
+              that.saveUserinfo()
           }else{
               Taro.showToast({
                   title:'绑定失败，请重试',
@@ -191,7 +191,74 @@ class PhoneRegister extends Component{
             })
         })
 
+     
+
     }
+
+    /**
+     * 保存formstore用户信息
+     */
+    saveUserinfo(){
+
+        const {
+            formStore: {
+                gender,
+                province,
+                city,
+                county,
+                year,
+                month,
+                day,
+                height,
+                education,
+                marriage,
+                income
+            }
+        } = this.props;
+
+        let data = {
+            gender: gender,
+            province: province,
+            city: city,
+            county: county,
+            year: year,
+            month: month,
+            day: day,
+            height: height,
+            education: education,
+            marriage: marriage,
+            income: income,
+            session3rd: Taro.getStorageSync("session3rd"),
+        }
+
+    /**
+    * 保存formStore到数据库
+    */
+        Taro.request({
+            url: api.saveFormStore,
+            method: "POST",
+            data: data,
+            header: {
+                "content-type": "application/x-www-form-urlencoded" // 默认值
+            },
+            success: function (e) {
+                console.log(e)
+            }, 
+            fail: function (e) {
+                Taro.showToast({
+                    title:'系统错误,请重试！',
+                    icon:'none'
+                })
+                //TODO 此处可以将发生错误的数据，存储到数据库
+                console.log(e)
+            }
+
+        })
+
+
+    }
+
+
 
     render(){
         return (    
