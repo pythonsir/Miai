@@ -226,11 +226,7 @@ export default class Area extends Component {
 
           this.updateParent(this.state.select_province, this.state.city_[val[1]].name, co_res[this.state.coindex].name)
 
-    
-
       })
-
-      this.updateParent(this.state.select_province, this.state.city_[val[1]].name,'选择县区')
 
       return;
     }
