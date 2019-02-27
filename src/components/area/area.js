@@ -96,29 +96,6 @@ export default class Area extends Component {
 
   }
 
-  setProvince = (index) => {
-
-    return new Promise((resolve, reject) => {
-
-      const pr = this.state.province_[index]
-
-      this.setState({
-        pindex: val[0],
-        select_province: this.state.province_[val[0]].name,
-      })
-
-      if(true){
-        resolve(pr)
-      }else{
-        reject(false)
-      }
-      
-
-
-    })
-
-
-  }
 
   setCity = (code, data) => {
       
