@@ -100,8 +100,17 @@ class CreateAccount extends Component{
             header: {
                 "content-type": "application/x-www-form-urlencoded" // 默认值
             },
-            success: function (e) {
-                console.log(e)
+            success: function (res) {
+                if(res.data.data == true){
+                    Taro.redirectTo({
+                        url:'/pages/comprehensive/comprehensive'
+                    })
+                }else{
+                    Taro.showToast({
+                        title:'系统错误，请重试',
+                        icon:'none'
+                    })
+                }
             },
             fail: function (e) {
                 //TODO 此处可以将发生错误的数据，存储到数据库

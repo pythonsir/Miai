@@ -174,7 +174,6 @@ class PhoneRegister extends Component{
         }).then(res => {
 
           if(res.data.data == true){
-              Taro.showToast({'title':'绑定成功'})
               that.saveUserinfo()
           }else{
               Taro.showToast({
@@ -241,8 +240,17 @@ class PhoneRegister extends Component{
             header: {
                 "content-type": "application/x-www-form-urlencoded" // 默认值
             },
-            success: function (e) {
-                console.log(e)
+            success: function (res) {
+                if(res.data.data){
+                    Taro.redirectTo({
+                        url: 'pages/comprehensive/comprehensive'
+                    })
+                }else{
+                    Taro.showToast({
+                        title:'系统错误，请重试',
+                        icon:'none'
+                    })
+                }
             }, 
             fail: function (e) {
                 Taro.showToast({
