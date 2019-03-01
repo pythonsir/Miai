@@ -243,7 +243,7 @@ class PhoneRegister extends Component{
             success: function (res) {
                 if(res.data.data){
                     Taro.redirectTo({
-                        url: 'pages/comprehensive/comprehensive'
+                        url: 'pages/comprehensive/comprehensive?i=0'
                     })
                 }else{
                     Taro.showToast({

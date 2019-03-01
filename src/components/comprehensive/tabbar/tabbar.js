@@ -6,28 +6,30 @@ import './tabbar.less'
  */
 class Tarbar extends Component{
 
-    state ={
-        index : 1,
-        tablist:[
+    state = {
+        tablist: [
             {
-                text:'推荐',
-                class:'recommend',
-                selectClass:'c_recommend',
-                textClass:'item_text_select'
+                text: '推荐',
+                class: 'recommend',
+                selectClass: 'c_recommend',
+                textClass: 'item_text_select'
             },
             {
                 text: '我的',
-                class:'me',
-                selectClass:'c_me',
-                textClass:'item_text_select'
+                class: 'me',
+                selectClass: 'c_me',
+                textClass: 'item_text_select'
             }
         ]
     }
+   
+    componentDidMount(){
+    //    console.log(this.props.tabindex)
+    }
 
     changeTab(i){
-        this.setState({
-            index:i
-        })
+     
+        this.props.onChange(i)
     }
 
     render(){
@@ -36,8 +38,8 @@ class Tarbar extends Component{
                 {
                     this.state.tablist.map((item,i) => {
                         return <View className='item' onClick={this.changeTab.bind(this,i)}>
-                            <View className={'item_image ' + (this.state.index === i ? item.selectClass :  item.class) }></View>
-                            <View className={'item_text ' +  (this.state.index === i && 'item_text_select')  }>
+                            <View className={'item_image ' + (this.props.tabindex == i ? item.selectClass :  item.class) }></View>
+                            <View className={'item_text ' + (this.props.tabindex == i && 'item_text_select')  }>
                                 {item.text}
                             </View>
                         </View>

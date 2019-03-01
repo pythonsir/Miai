@@ -103,7 +103,7 @@ class CreateAccount extends Component{
             success: function (res) {
                 if(res.data.data == true){
                     Taro.redirectTo({
-                        url:'/pages/comprehensive/comprehensive'
+                        url:'/pages/comprehensive/comprehensive?i=0'
                     })
                 }else{
                     Taro.showToast({
@@ -113,7 +113,7 @@ class CreateAccount extends Component{
                 }
             },
             fail: function (e) {
-                //TODO 此处可以将发生错误的数据，存储到数据库
+                //TODO 此处可以将发生错误的日志，存储到数据库
                 console.log(e)
             }
 
