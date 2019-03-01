@@ -20,6 +20,7 @@
 2. [使用Taro开发一款相亲类微信小程序-出生年月选择页](https://mp.weixin.qq.com/s?__biz=Mzg3MTA2MjYwMQ==&mid=2247483708&idx=1&sn=639957cbe1f8ecf3cfb967e5c7fd37a5&chksm=ce850c1af9f2850c61123607deb2846718c7e51129cfd8d83b96be5636e75282e145d6806587&token=177588573&lang=zh_CN#rd)
 2. [使用Taro开发一款相亲类微信小程序-获取微信绑定手机号](https://mp.weixin.qq.com/s?__biz=Mzg3MTA2MjYwMQ==&mid=100000061&idx=1&sn=5d7483cc66159dcb14649d2173ae31aa&chksm=4e850c1b79f2850db316f70e425873b0207b6adb0c7aa57903e882080b108f80c385c0cd17f5&mpshare=1&scene=1&srcid=0129DUrOizCN3zJEK6EOMr2o&key=6e5a2bbecc3dbc9e0e67cfeb93cfca60b50140641c877a8d058ba81492827985bac54f6c6a7fe05693fe25605d094aa9141f3b8d6123a039d7b1f370e427d1886bba42f5f06dba75cc433ad1a312217c&ascene=0&uin=MTM5NzMxNTU1&devicetype=iMac+MacBookAir5%2C2+OSX+OSX+10.12.2+build(16C68)&version=12010210&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=4z2p18%2FuchTtOoKkLvmkcL9i6uOxiEEqYp6lmyFwNeQ%3D)
 2. [使用Taro开发一款相亲类微信小程序-发送短信验证码](https://mp.weixin.qq.com/s?__biz=Mzg3MTA2MjYwMQ==&mid=2247483723&idx=1&sn=43baf6e4433da4c78c59bbf6f909943e&chksm=ce850c6df9f2857b98ba4cc2fcf8657b94abdcd263e6592369b87721a48784d689c8a63fe6d9&token=1215130408&lang=zh_CN#rd)
+2. [使用Taro开发一款相亲类微信小程序-TabBar组件开发](https://mp.weixin.qq.com/s?__biz=Mzg3MTA2MjYwMQ==&mid=2247483742&idx=1&sn=765ad9893edd76a1d6656f7b53a2b880&chksm=ce850c78f9f2856eaf31b9f6df95885e8d985069642d1727dd8b633120bf0d920ef55171a2ef&token=364028584&lang=zh_CN#rd)
 
 
 
