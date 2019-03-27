@@ -46,9 +46,13 @@ class Index extends Component {
 
     const {userInfo} = e.detail;
  
+    console.log(userInfo)
+
+    console.log(e.detail.errMsg)
+
     if (e.detail.errMsg == 'getUserInfo:ok'){
 
-      if (!Taro.getStorageSync("userinfo")){
+        console.log("aaaaaaaaa")
 
         Taro.request({
           url: api.saveWeixin,
@@ -76,13 +80,7 @@ class Index extends Component {
 
         })
 
-      }else{
 
-        Taro.navigateTo({
-          url:'/pages/choosesex/choosesex'
-        })
-
-      }
 
 
      
