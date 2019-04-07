@@ -89,7 +89,6 @@ class Workspace extends Component {
           >
             下一步
               </AtButton>
-          <View className="title">已有账号，直接登陆</View>
         </View>
         </View>
         

@@ -6,14 +6,15 @@ import api from "../../config/api";
 import './index.less'
 import bg from '../../assets/images/bg.jpg'
 
-@inject("counterStore")
-@observer
+
 class Index extends Component {
   config = {
     navigationBarTitleText: "脱单在太原",
   };
 
-  componentWillMount() {}
+  componentWillMount() {
+    this.getUserinfo()
+  }
 
   componentWillReact() {
     console.log("componentWillReact");
@@ -27,32 +28,37 @@ class Index extends Component {
 
   componentDidHide() {}
 
-  increment = () => {
-    const { counterStore } = this.props;
-    counterStore.increment();
-  };
+  getUserinfo = ()=>{
 
-  decrement = () => {
-    const { counterStore } = this.props;
-    counterStore.decrement();
-  };
+    Taro.request({
+      url: api.getUserinfo,
+      data:{
+        session3rd: Taro.getStorageSync("session3rd")
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded" // 默认值
+      },
+      method: "POST",
+      success: function (res) {
+        console.log(res);
+        if(res.data.data){
+          Taro.redirectTo({
+            url: '/pages/comprehensive/comprehensive?i=0'
+          })
+        }
+      },
+      fail: function (err) {
+        console.log(err);
+      }
+    })
 
-  incrementAsync = () => {
-    const { counterStore } = this.props;
-    counterStore.incrementAsync();
-  };
+  }
 
   tobegin = (e) => {
 
     const {userInfo} = e.detail;
- 
-    console.log(userInfo)
-
-    console.log(e.detail.errMsg)
 
     if (e.detail.errMsg == 'getUserInfo:ok'){
-
-        console.log("aaaaaaaaa")
 
         Taro.request({
           url: api.saveWeixin,
@@ -92,9 +98,7 @@ class Index extends Component {
   };
 
   render() {
-    const {
-      counterStore: { counter }
-    } = this.props;
+ 
     return <View className="index">
         <Image src={bg} mode="aspectFill" />
         <View className="btn_container">

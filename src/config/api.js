@@ -8,5 +8,6 @@ export default {
   getPhone: apiRoot + "?s=Core.getPhone",
   sendSms: apiRoot + "?s=Core.sendSms",
   bindPhone: apiRoot + '?s=Core.bindPhone',
-  saveFormStore: apiRoot + '?s=User.saveUserInfo'
+  saveFormStore: apiRoot + '?s=User.saveUserInfo',
+  getUserinfo: apiRoot + '?s=User.getUserinfo'
 };
